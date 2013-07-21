@@ -26,5 +26,8 @@ wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
 # bash command line to use vi
 set -o vi
 
-# login to Heroku
+# login to Heroku and add RSA key
 heroku login 
+ssh-keygen -t rsa
+heroku keys:add
+heroku git:remote -a bark-bitstarter
